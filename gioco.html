@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>La Sfida dell'Astronauta</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background-color: #1a1a1a; color: white; padding: 50px; }
+        input { padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Enigma Didattico</h2>
+    <p>Qual è il "Pianeta Rosso" del nostro sistema solare?</p>
+    
+    <input type="text" id="risposta" placeholder="Scrivi la risposta qui...">
+    <button onclick="controlla()">Verifica</button>
+
+    <p id="messaggio"></p>
+
+    <script>
+        function controlla() {
+            var risposta = document.getElementById("risposta").value.toLowerCase().trim();
+            if (risposta === "marte") {
+                window.location.href = "successo.html";
+            } else {
+                document.getElementById("messaggio").innerText = "Risposta errata! Riprova, piccolo astronomo.";
+                document.getElementById("messaggio").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
